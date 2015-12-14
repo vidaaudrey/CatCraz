@@ -2,7 +2,7 @@
   "name": "catcraz",
   "version": "1.0.0",
   "description": "CatCraz is a place for crazy cat lovers",
-  "main": "server/app.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

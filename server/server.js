@@ -8,7 +8,7 @@ var restful = require('node-restful');
 
 // Create the application.
 var app = express();
-
+app.use(express.static('client'));
 // Add Middleware necessary for REST API's
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -21,7 +21,6 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
-
 
 mongoose.connect('mongodb://audrey:audrey@ds029595.mongolab.com:29595/catcraz')
 .connection.once('open', function() {
@@ -43,6 +42,6 @@ var Cat = app.cat = restful.model('cat', mongoose.Schema({
 Cat.register(app, '/cats');
 
 
-app.get('/',  function(req, res){
-    res.end('ok');
-});
+// app.get('/',  function(req, res){
+//     res.end('ok');
+// });

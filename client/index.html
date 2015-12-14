@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="catCraz" layout="row" ng-controller="CatController as cc" ng-cloak >
+  
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+
+    <md-toolbar class="md-whiteframe-z1">
+      <h1>Stars</h1>
+    </md-toolbar>
+
+    <md-list>
+      <md-list-item ng-repeat="it in cc.cats">
+          <md-button ng-click="cc.selectCat(it)" ng-class="{'selected' : it === cc.selected }">
+            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+            {{it.name}}
+          </md-button>
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+      <md-button class="menu" hide-gt-sm ng-click="cc.toggleList()" aria-label="Show Cat List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h1>Cat Craz -- Happiness made simple  </h1>
+    </md-toolbar>
+
+    <md-content flex id="content">
+        <md-icon md-svg-icon="{{cc.selected.avatar}}" class="avatar"></md-icon>
+        <h2>{{cc.selected.name}}</h2>
+        <p>{{cc.selected.content}}</p>
+        <img ng-src="{{cc.selected.url}}" alt="cc.selected.name">
+        <md-button class="contact" md-no-ink ng-click="cc.showContactOptions($event)" aria-label="Contact Cat">
+          <md-tooltip>Contact {{ cc.selected.name }}</md-tooltip>
+          <md-icon md-svg-icon="share"></md-icon>
+        </md-button>
+      </md-content>
+
+  </div>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script src="./src/cats/Cats.js"></script>
+    <script src="./src/cats/CatController.js"></script>
+    <script src="./src/cats/CatService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('catCraz', ['ngMaterial', 'cats'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('pink')
+                          .accentPalette('cyan');
+
+              });
+
+    </script>
+
+  </body>
+</html>
