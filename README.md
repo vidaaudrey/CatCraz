@@ -24,4 +24,4 @@ Run `grunt build` for building and `grunt serve` for preview.
 
 ## Note 
 
-1. 
+

@@ -25,6 +25,14 @@
   },
   "homepage": "https://github.com/vidaaudrey/CatCraz#readme",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.11.0",
+    "grunt-notify": "^0.3.0"
+  },
+  "devDependencies": {
+    "grunt-nodemon": "^0.4.1"
   }
 }
