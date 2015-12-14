@@ -1,0 +1,30 @@
+{
+  "name": "catcraz",
+  "version": "1.0.0",
+  "description": "CatCraz is a place for crazy cat lovers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vidaaudrey/CatCraz.git"
+  },
+  "keywords": [
+    "Cat",
+    "Cats",
+    "Cat",
+    "Lovers",
+    "Cat",
+    "Crazy"
+  ],
+  "author": "Audrey Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vidaaudrey/CatCraz/issues"
+  },
+  "homepage": "https://github.com/vidaaudrey/CatCraz#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

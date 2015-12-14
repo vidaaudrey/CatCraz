@@ -1,0 +1,31 @@
+{
+  "name": "catcraz",
+  "description": "CatCraz is a place for crazy cat lovers",
+  "main": "index.js",
+  "authors": [
+    "Audrey Li"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Cat",
+    "Cats",
+    "Cat",
+    "Lovers",
+    "Cat",
+    "Crazy"
+  ],
+  "homepage": "https://github.com/vidaaudrey/CatCraz.git",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
