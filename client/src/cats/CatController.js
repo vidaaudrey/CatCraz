@@ -28,6 +28,7 @@
     catService
           .loadAllCats()
           .then( function( cats ) {
+            console.log('got cats from service', cats);
             self.cats    = [].concat(cats);
             self.selected = cats[0];
           });
