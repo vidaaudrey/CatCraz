@@ -8,6 +8,15 @@ html, body {
 
 /* Toolbar area */
 
+
+md-toolbar.logo {
+    background-color: rgba(126, 44, 155, 0.16);
+    color: #000;
+    min-height: 200px;
+    text-align: center;
+}
+
+
 .menu {
   background-color: transparent;
   border: none;
@@ -20,7 +29,16 @@ md-toolbar h1 {
   margin: auto;
 }
 
-/* Sidenav area */
+.info-icon{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 36px;
+  height: 36px;
+}
+
+
+/* Sidenav area i*/
 
 md-list .md-button {
   color: inherit;
@@ -49,7 +67,7 @@ md-list .md-button {
   padding-top: 5px;
 }
 
-#content .md-button.contact {
+#content .md-button.options {
   background-color: transparent;
   border: none;
   width: 48px;
@@ -60,11 +78,19 @@ md-list .md-button {
   right: 40px;
 }
 
+#content .md-button.options.add {
+  right: 120px;
+}
+#content .md-button.options.edit {
+  right: 80px;
+}
+
+
 #content md-icon.avatar {
   margin-top: 10px;
 }
 
-#content .md-button.contact > md-icon {
+#content .md-button.options > md-icon {
   fill:black;
   width:36px;
   height:36px;
@@ -76,7 +102,7 @@ md-button.menuBtn > md-icon {
   height:24px;
 }
 
-#content .md-button.contact:active > md-icon {
+#content .md-button.options:active > md-icon {
   background-color: #dadada;
   border-radius: 75%;
   padding:4px;
@@ -128,3 +154,13 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+
+.logo-icon {
+  width: 100px;
+  height: 100px;
+}
+.my-icon svg {
+   fill : #fff;
+}
+

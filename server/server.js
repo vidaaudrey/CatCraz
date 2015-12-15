@@ -64,14 +64,23 @@ var KatSchema = new Schema({
 });
 
 
+
 var Kat = app.kat = restful.model('kat', KatSchema).methods(['get', 'post', 'put', 'delete']);
 var User = app.user = restful.model('user', UserSchema).methods(['get', 'post', 'put', 'delete']);
 var Category = app.category = restful.model('categories', CategorySchema).methods(['get', 'post', 'put', 'delete']);
+
+// clean and use fake data to fill up the db 
+require('./datamaker')(User, Category, Kat, mongoose);
 
 
 Kat.register(app, '/cats');
 User.register(app, '/users');
 Category.register(app, '/categories');
+
+
+
+
+
 // var UserSchema = new Schema({
 //   username: String,
 //   avatar: String
@@ -113,12 +122,7 @@ Category.register(app, '/categories');
 // var newUser = new User({
 //   username: 'Audrey'
 // });
-// var newUser1 = new User({
-//   username: 'JJ'
-// });
-// newUser.save(function(err, user) {
-//   console.log('After saving user online', err, user);
-// });
+
 
 // newUser1.save(function(err, user) {
 //   console.log('After saving user online', err, user);
