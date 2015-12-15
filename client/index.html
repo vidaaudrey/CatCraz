@@ -47,14 +47,15 @@
                 <md-icon md-svg-icon="menu"></md-icon>
             </md-button>
             <h1>CatBook -- Happiness made simple  </h1>
-            <md-icon md-svg-icon="info" class="info-icon"></md-icon>
+            <md-icon md-svg-icon="info" class="info-icon" ng-click="cc.showAlert($event)" ></md-icon>
         </md-toolbar>
         <md-content flex id="content">
             <h2>{{cc.selected.title}}</h2>
             <p>{{cc.selected.modified | date:'medium'}}</p>
-            <img ng-src="{{cc.selected.url}}" alt="cc.selected.title">
+            <img ng-src="{{cc.selected.url}}" alt="cc.selected.title" class="cat-image">
             <md-list>
-                <md-subheader class="md-no-sticky">3 line item</md-subheader>
+                <md-subheader class="md-no-sticky comment-header"><h3>{{cc.getCommentsHeaderString(cc.selected.comments)}}</h3></md-subheader>
+
                 <md-list-item class="md-3-line" ng-repeat="comment in cc.selected.comments">
                     <img ng-src="{{comment.user.avatar || 'assets/default-avatar.jpg'}}" class="md-avatar" alt="{{comment.user.username}}" />
                     <div class="md-list-item-text" layout="column">
@@ -63,7 +64,7 @@
                 </md-list-item>
             </md-list>
 
-
+            
             
             <md-button class="options add" md-no-ink ng-click="cc.showContactOptions($event)" aria-label="Add a Cat">
                 <md-tooltip>Add a new cat</md-tooltip>
@@ -79,9 +80,12 @@
 			</md-button>
 
         </md-content>
-	<!-- open info dialog -->
-		
 
+	<!-- open info dialog -->
+	<!-- 	<md-button ng-controller="PageController as pc" class="md-primary md-raised" ng-click="showAlert($event)"   flex="100"  flex-gt-md="auto">
+              Alert Dialog
+        </md-button>
+ -->
 	
     </div>
 	

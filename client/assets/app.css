@@ -58,10 +58,7 @@ md-list .md-button {
 /* Primary content area */
 
 #content {
-  overflow: hidden;
-}
-
-#content  {
+  overflow: scroll;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 5px;
@@ -109,10 +106,16 @@ md-button.menuBtn > md-icon {
   transition: all 100ms ease-out 30ms;
 }
 
-#content img {
+#content .cat-image {
   display: block;
+  width: 800px;
+  max-width: 90%;
   height: auto;
-  max-width: 500px;
+  margin: 0 auto;
+}
+
+.comment-header{
+  margin-top: 16px;
 }
 
 /* Utils */
@@ -162,5 +165,9 @@ span.name {
 }
 .my-icon svg {
    fill : #fff;
+}
+
+md-dialog{
+  max-width: 500px;
 }
 

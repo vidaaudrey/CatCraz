@@ -1,5 +1,5 @@
 # CatCraz
-CatBook, formerly known as CatCraz,  is a app built for crazy cat lovers. 
+CatBook, formerly known as CatCraz,  is an app built for crazy cat lovers. 
 
 CatBook helps you get out of boredom, greatlly reduce your stress level, and ultimately improve your mental and physical health.
 
