@@ -6,6 +6,12 @@
           'catService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$mdDialog', '$mdMedia', 
           CatController
        ]);
+       // .controller('CommentFormCtrl', [
+       //    'catService',
+       //    CommentFormCtrl
+       // ]);
+
+
 
   /**
    * Main Controller for the Angular Material Starter App
@@ -26,6 +32,12 @@
     self.getCommentsHeaderString = getCommentsHeaderString;
     self.voteUp = voteUp;
     self.deleteCat = deleteCat;
+    self.submitComment = submitComment;
+    self.newComment = {
+          username: 'John Doe',
+          avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/maz/128.jpg',
+          text: 'I want to say...'
+    };
 
     // Load all registered cats
 
@@ -40,6 +52,23 @@
     // *********************************
     // Internal methods
     // *********************************
+
+    function submitComment(ev){
+      console.log('submitting new comment', self.newComment);
+      self.selected.comments.push(self.newComment);
+      // reset
+      self.newComment = {
+            username: 'John Doe',
+            avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/maz/128.jpg',
+            text: 'I want to say...'
+      };
+      catService
+        .saveVotes(self.selected)
+        .then(function(savedCat){
+          console.log('Cat new comment saved to server', savedCat.comments);
+        });
+
+    }
 
     function voteUp(ev){
       self.selected.vote++;

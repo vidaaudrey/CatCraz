@@ -41,15 +41,15 @@
         });
     };
     this.saveVotes = function(cat){
-      console.log('trying to save vote in using service');
+      console.log('trying to save cat  using service');
       return $http.put('/cats/'+cat._id, cat)
         .then(function(response){
           deferred.resolve(response.data);
-          console.log('saved vote in server, got data back', response.data);
+          console.log('saved cat in server, got data back', response.data);
           return deferred.promise;
         }, function(err){
           deferred.reject(err);
-          console.log('error saving vote in server', err);
+          console.log('error saving cat in server', err);
           return deferred.promise;
         });
     };

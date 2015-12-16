@@ -150,6 +150,11 @@ md-button.menuBtn > md-icon {
   margin-top: 16px;
 }
 
+.new-comment {
+    border-top: 2px dashed rgba(128, 128, 128, 0.23);
+    margin-top: 30px;
+}
+
 /* Utils */
 
 .content-wrapper {
