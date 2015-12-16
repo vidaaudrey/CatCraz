@@ -24,6 +24,8 @@
     self.showContactOptions  = showContactOptions;
     self.showAlert = showAlert;
     self.getCommentsHeaderString = getCommentsHeaderString;
+    self.voteUp = voteUp;
+    self.deleteCat = deleteCat;
 
     // Load all registered cats
 
@@ -38,6 +40,41 @@
     // *********************************
     // Internal methods
     // *********************************
+
+    function voteUp(ev){
+      self.selected.vote++;
+      console.log(self.selected.vote);
+      catService
+         .saveVotes(self.selected)
+        .then(function(savedCat){
+          console.log('Cat vote saved to server', savedCat.vote);
+        });
+    }
+
+    function deleteCat(ev){
+      console.log("trying to delete cat", self.selected);
+      var index = self.cats.indexOf(self.selected);
+      catService
+         .deleteCat(self.selected)
+        .then(function(msg){
+          console.log('Cat deleted from server', msg);
+          // automatically move to the next cat in the view
+          var nextIndex = _getNextCat(index);
+          if(nextIndex !== null){
+            self.selectCat(self.cats[nextIndex]);
+            self.cats.splice(index, 1);
+            console.log('selecting next cat');
+          }
+        });
+    }
+
+    function _getNextCat(index){
+      if(self.cats === null)  return null;
+      if(index >= self.cats.length - 1 || index < 0) {
+        return 0;
+      }
+      return index+1;
+    }
 
     function showAlert(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
@@ -77,6 +114,7 @@
     }
 
     function getCommentsHeaderString(comments){
+      if(!comments) return '';
       if(comments.length === 0 ) return "No comments"; 
       if(comments.length === 1 ) return "One comment"; 
       return  comments.length + " comments"; 

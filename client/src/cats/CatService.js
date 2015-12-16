@@ -40,7 +40,35 @@
           return deferred.promise;
         });
     };
+    this.saveVotes = function(cat){
+      console.log('trying to save vote in using service');
+      return $http.put('/cats/'+cat._id, cat)
+        .then(function(response){
+          deferred.resolve(response.data);
+          console.log('saved vote in server, got data back', response.data);
+          return deferred.promise;
+        }, function(err){
+          deferred.reject(err);
+          console.log('error saving vote in server', err);
+          return deferred.promise;
+        });
+    };
+
+    this.deleteCat = function(cat){
+      console.log('trying to save vote in using service');
+      return $http.delete('/cats/'+cat._id, cat)
+        .then(function(response){
+          deferred.resolve(response.data);
+          console.log('deleting cat from server successfull', response.data);
+          return deferred.promise;
+        }, function(err){
+          deferred.reject(err);
+          console.log('error deleting cat in server', err);
+          return deferred.promise;
+        });
+    };
   }
+
 
 })();
 

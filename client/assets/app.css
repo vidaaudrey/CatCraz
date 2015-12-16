@@ -67,21 +67,48 @@ md-list .md-button {
 #content .md-button.options {
   background-color: transparent;
   border: none;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   margin: 8px auto 16px 0;
   position: absolute;
   top: 10px;
   right: 40px;
+  min-width: 36px;
+}
+
+#content .md-button.options.edit {
+  right: 80px;
 }
 
 #content .md-button.options.add {
   right: 120px;
 }
-#content .md-button.options.edit {
-  right: 80px;
+
+#content .md-button.options.delete {
+  right: 160px;
 }
 
+#content .md-button.options.love {
+  right: 360px;
+  background-color: rgb(8, 158, 55);
+}
+
+#content .md-button.options.hate {
+  right: 300px;
+  background-color: rgb(243, 9, 9);
+}
+
+#content .md-button.options.votes {
+  right: 420px;
+  min-width: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+#content md-icon{
+  vertical-align: initial;
+}
 
 #content md-icon.avatar {
   margin-top: 10px;
@@ -113,6 +140,11 @@ md-button.menuBtn > md-icon {
   height: auto;
   margin: 0 auto;
 }
+#content .md-button.options > md-icon {
+    width: 28px;
+    height: 28px;
+}
+
 
 .comment-header{
   margin-top: 16px;
