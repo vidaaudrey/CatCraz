@@ -9,7 +9,7 @@ Angular, Angular-Material, NodeJS, Node-Restful, Express, MongoDB, Heroku
 ### Demo 
 1. visit http://CatBook100.heroku.com 
 
-### Developing
+### Develop
 
 1. Run `npm install` to install server dependencies.
 
@@ -17,14 +17,17 @@ Angular, Angular-Material, NodeJS, Node-Restful, Express, MongoDB, Heroku
 
 3. Run `grunt` to start the development server.
 
-## TODO (may not finish)
+### Deploy
+Push to heroku or connect Heroku with github repo, and create a mongolab add-on under Heroku resources
+
+### TODO (may not finish)
 - [ ] Add cat 
 - [ ] Edit cat 
 - [ ] Share cat 
 - [ ] Add more cat picture  
 
 
-## Author  
+### Author  
    [Audrey Li](http://audreyli.me) 
 
 
