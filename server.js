@@ -28,8 +28,7 @@ app.use(function (req, res, next) {
 
 mongoose.connect('mongodb://audrey:audrey@ds029595.mongolab.com:29595/catcraz')
   .connection.once('open', function () {
-    console.log('Connected to mongolab, and listening on port 3000...');
-    app.listen(3000);
+    console.log('Connected to mongolab');
   });
 
 var UserSchema = new Schema({
@@ -72,13 +71,13 @@ var User = app.user = restful.model('user', UserSchema).methods(['get', 'post', 
 var Category = app.category = restful.model('categories', CategorySchema).methods(['get', 'post', 'put', 'delete']);
 
 // clean and use fake data to fill up the db 
-require('./server/datamaker')(User, Category, Kat, mongoose);
+// require('./server/datamaker')(User, Category, Kat, mongoose);
 
 
 Kat.register(app, '/cats');
 User.register(app, '/users');
 Category.register(app, '/categories');
-
+app.listen(process.NODE_ENV || 3000);
 
 
 
