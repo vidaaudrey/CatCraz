@@ -1,27 +1,32 @@
 # CatCraz
-CatBook, formerly known as CatCraz,  is an app built for crazy cat lovers. 
+CatBook, formerly known as CatCraz,  is an Angular web app that entertains people with funny cat pictures.
 
 CatBook helps you get out of boredom, greatlly reduce your stress level, and ultimately improve your mental and physical health.
 
+### Tech Stack: 
+Angular, Angular-Material, NodeJS, Node-Restful, Express, MongoDB
 
-## Getting Started
+### Demo 
 1. visit http://CatCraz.heroku.com 
 
 ### Developing
 
 1. Run `npm install` to install server dependencies.
 
-2. Run `bower install` to install front-end dependencies.
+2. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
 
-3. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
+3. Run `grunt` to start the development server.
 
-4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
+## TODO (may not finish)
+- [ ] Add cat 
+- [ ] Edit cat 
+- [ ] Share cat 
+- [ ] Add more cat picture  
 
-## Build & development
 
-Run `grunt build` for building and `grunt serve` for preview.
+## Author  
+   [Audrey Li](http://audreyli.me) 
 
 
-## Note 
-
+![Screenshot](screenshot.png)
 
