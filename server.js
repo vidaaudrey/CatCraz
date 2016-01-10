@@ -10,14 +10,6 @@ var Schema = mongoose.Schema;
 var app = express();
 // app.use(express.static('client'));
 app.use('/', express.static('client'));
-app.listen(process.env.PORT || 3000, function (err) {
-  if (!err) {
-    mongoose.connect('mongodb://audrey:audrey@ds029595.mongolab.com:29595/catcraz')
-      .connection.once('open', function () {
-        console.log('Connected to mongolab');
-      });
-  }
-});
 
 
 // Add Middleware necessary for REST API's
@@ -84,7 +76,14 @@ Kat.register(app, '/cats');
 User.register(app, '/users');
 Category.register(app, '/categories');
 
-
+app.listen(process.env.PORT || 3000, function (err) {
+  if (!err) {
+    mongoose.connect('mongodb://audrey:audrey@ds029595.mongolab.com:29595/catcraz')
+      .connection.once('open', function () {
+        console.log('Connected to mongolab');
+      });
+  }
+});
 
 
 // var UserSchema = new Schema({
