@@ -4,7 +4,7 @@
   "description": "CatCraz is a place for crazy cat lovers",
   "main": "server/server.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install", 
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,6 +42,7 @@
     "node-restful": "^0.2.4"
   },
   "devDependencies": {
+    "bower": "^1.7.2",
     "grunt-nodemon": "^0.4.1"
   }
 }

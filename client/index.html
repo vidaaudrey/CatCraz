@@ -8,9 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="assets/app.css" />
-
     <style type="text/css">
     /**
          * Hide when Angular is not yet loaded and initialized
@@ -30,8 +29,8 @@
 <body ng-app="catCraz" layout="row" ng-controller="CatController as cc" ng-cloak>
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
         <md-toolbar class="logo">
-           <md-icon md-svg-icon="catbook" class="logo-icon"></md-icon>
-           <p>Paw, world!</p>
+            <md-icon md-svg-icon="catbook" class="logo-icon"></md-icon>
+            <p>Paw, world!</p>
         </md-toolbar>
         <md-list>
             <md-list-item ng-repeat="it in cc.cats">
@@ -47,16 +46,15 @@
                 <md-icon md-svg-icon="menu"></md-icon>
             </md-button>
             <h1>CatBook -- Happiness made simple  </h1>
-            <md-icon md-svg-icon="info" class="info-icon" ng-click="cc.showAlert($event)" ></md-icon>
+            <md-icon md-svg-icon="info" class="info-icon" ng-click="cc.showAlert($event)"></md-icon>
         </md-toolbar>
         <md-content flex id="content">
             <h2>{{cc.selected.title}}   </h2>
             <p>{{cc.selected.modified | date:'medium'}}</p>
-
             <img ng-src="{{cc.selected.url}}" alt="cc.selected.title" class="cat-image">
             <md-list>
-                <md-subheader class="md-no-sticky comment-header"><h3>{{cc.getCommentsHeaderString(cc.selected.comments)}}</h3></md-subheader>
-
+                <md-subheader class="md-no-sticky comment-header">
+                    <h3>{{cc.getCommentsHeaderString(cc.selected.comments)}}</h3></md-subheader>
                 <md-list-item class="md-3-line" ng-repeat="comment in cc.selected.comments">
                     <img ng-src="{{comment.user.avatar || 'assets/default-avatar.jpg'}}" class="md-avatar" alt="{{comment.user.username}}" />
                     <div class="md-list-item-text" layout="column">
@@ -64,26 +62,19 @@
                     </div>
                 </md-list-item>
             </md-list>
-
             <md-button class="options votes" aria-label="Votes">
                 {{cc.selected.vote}} Paws
             </md-button>
-
-
             <md-button class="md-fab options love" aria-label="Love it" ng-click="cc.voteUp($event)">
                 <md-icon md-svg-icon="paw"></md-icon>
             </md-button>
             <md-button class="md-fab options hate" aria-label="Hate it">
                 <md-icon md-svg-icon="hate"></md-icon>
             </md-button>
-
-
             <md-button class="options delete" md-no-ink ng-click="cc.deleteCat($event)" aria-label="Delete a Cat">
                 <md-tooltip>Delete a new cat</md-tooltip>
                 <md-icon md-svg-icon="delete"></md-icon>
             </md-button>
-            
-            
             <md-button class="options add" md-no-ink ng-click="cc.showContactOptions($event)" aria-label="Add a Cat">
                 <md-tooltip>Add a new cat</md-tooltip>
                 <md-icon md-svg-icon="add"></md-icon>
@@ -92,48 +83,37 @@
                 <md-tooltip>Edit {{ cc.selected.title }}</md-tooltip>
                 <md-icon md-svg-icon="edit"></md-icon>
             </md-button>
-			<md-button class="options contact" md-no-ink ng-click="cc.showContactOptions($event)" aria-label="Contact Cat">
-			    <md-tooltip>Contact {{ cc.selected.title }}</md-tooltip>
-			    <md-icon md-svg-icon="share"></md-icon>
-			</md-button>
-            
-
+            <md-button class="options contact" md-no-ink ng-click="cc.showContactOptions($event)" aria-label="Contact Cat">
+                <md-tooltip>Contact {{ cc.selected.title }}</md-tooltip>
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
             <div class="new-comment">
-               <h2>Comment</h2>
-               <md-content class="autoScroll">
-
-                <md-input-container class="md-icon-float md-block">
-                  <!-- Use floating label instead of placeholder -->
-                    <label>Name</label>
-                    <md-icon md-svg-icon="avatar" style="display:inline-block;"></md-icon>
-                    <input ng-model="cc.newComment.username" type="text">
-                </md-input-container>
-                
-                <md-input-container md-no-float class="md-block">
-                    <label>Avatar Link</label>
-                    <md-icon md-svg-icon="avatar" style="display:inline-block;"></md-icon>
-                    <input ng-model="cc.newComment.avatar" type="url" placeholder="avatar url" >
-                </md-input-container>
-
-                <md-input-container class="md-block">
-                    <md-icon md-svg-icon="content"></md-icon>
-                    <textarea ng-model="cc.newComment.text" columns="1" md-maxlength="150" rows="5" placeholder="I want to say..." ></textarea>
-                </md-input-container>
-                <md-button class="md-raised md-primary" ng-click="cc.submitComment($event)">Say It</md-button>
-              </md-content>
+                <h2>Comment</h2>
+                <md-content class="autoScroll">
+                    <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Name</label>
+                        <md-icon md-svg-icon="avatar" style="display:inline-block;"></md-icon>
+                        <input ng-model="cc.newComment.username" type="text">
+                    </md-input-container>
+                    <md-input-container md-no-float class="md-block">
+                        <label>Avatar Link</label>
+                        <md-icon md-svg-icon="avatar" style="display:inline-block;"></md-icon>
+                        <input ng-model="cc.newComment.avatar" type="url" placeholder="avatar url">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <md-icon md-svg-icon="content"></md-icon>
+                        <textarea ng-model="cc.newComment.text" columns="1" md-maxlength="150" rows="5" placeholder="I want to say..."></textarea>
+                    </md-input-container>
+                    <md-button class="md-raised md-primary" ng-click="cc.submitComment($event)">Say It</md-button>
+                </md-content>
             </div>
-
-
         </md-content>
-	
     </div>
-	
-
-
-    <script src="./bower_components/angular/angular.js"></script>
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.js"></script>
     <script src="./src/cats/Cats.js"></script>
     <script src="./src/cats/CatController.js"></script>
     <script src="./src/cats/CatService.js"></script>
