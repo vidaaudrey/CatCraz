@@ -10,6 +10,8 @@ var Schema = mongoose.Schema;
 var app = express();
 // app.use(express.static('client'));
 app.use('/', express.static('client'));
+app.listen(process.NODE_ENV || 3000);
+
 
 // Add Middleware necessary for REST API's
 app.use(bodyParser.urlencoded({
@@ -77,7 +79,6 @@ var Category = app.category = restful.model('categories', CategorySchema).method
 Kat.register(app, '/cats');
 User.register(app, '/users');
 Category.register(app, '/categories');
-app.listen(process.NODE_ENV || 3000);
 
 
 
