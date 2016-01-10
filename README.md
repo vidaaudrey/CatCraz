@@ -4,10 +4,10 @@ CatBook, formerly known as CatCraz,  is an Angular web app that entertains peopl
 CatBook helps you get out of boredom, greatlly reduce your stress level, and ultimately improve your mental and physical health.
 
 ### Tech Stack: 
-Angular, Angular-Material, NodeJS, Node-Restful, Express, MongoDB
+Angular, Angular-Material, NodeJS, Node-Restful, Express, MongoDB, Heroku 
 
 ### Demo 
-1. visit http://CatCraz.heroku.com 
+1. visit http://CatBook100.heroku.com 
 
 ### Developing
 
