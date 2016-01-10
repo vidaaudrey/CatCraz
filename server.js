@@ -8,7 +8,9 @@ var Schema = mongoose.Schema;
 
 // Create the application.
 var app = express();
-app.use(express.static('client'));
+// app.use(express.static('client'));
+app.use('/', express.static('client'));
+
 // Add Middleware necessary for REST API's
 app.use(bodyParser.urlencoded({
   extended: true
@@ -17,7 +19,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // CORS Support
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -25,7 +27,7 @@ app.use(function(req, res, next) {
 });
 
 mongoose.connect('mongodb://audrey:audrey@ds029595.mongolab.com:29595/catcraz')
-  .connection.once('open', function() {
+  .connection.once('open', function () {
     console.log('Connected to mongolab, and listening on port 3000...');
     app.listen(3000);
   });
@@ -70,7 +72,7 @@ var User = app.user = restful.model('user', UserSchema).methods(['get', 'post', 
 var Category = app.category = restful.model('categories', CategorySchema).methods(['get', 'post', 'put', 'delete']);
 
 // clean and use fake data to fill up the db 
-require('./datamaker')(User, Category, Kat, mongoose);
+require('./server/datamaker')(User, Category, Kat, mongoose);
 
 
 Kat.register(app, '/cats');

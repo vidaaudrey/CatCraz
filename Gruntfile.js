@@ -1,10 +1,9 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
 
     jshint: {
-      files: ['client/js/app.js'
-      ],
+      files: ['client/js/app.js'],
     },
 
     mochaTest: {
@@ -24,11 +23,11 @@ module.exports = function(grunt) {
           livereload: true,
         }
       }
-    }, 
+    },
 
     nodemon: {
       dev: {
-        script: 'server/server.js'
+        script: 'server.js'
       }
     }
 
@@ -44,7 +43,6 @@ module.exports = function(grunt) {
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
-  grunt.registerTask('default', ['nodemon', 'watch'
-  ]);
+  grunt.registerTask('default', ['nodemon', 'watch']);
 
 };
