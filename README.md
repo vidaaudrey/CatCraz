@@ -1,4 +1,4 @@
-# CatCraz
+# CatBook / CatCraz
 CatBook, formerly known as CatCraz,  is an Angular web app that entertains people with funny cat pictures.
 
 CatBook helps you get out of boredom, greatlly reduce your stress level, and ultimately improve your mental and physical health.

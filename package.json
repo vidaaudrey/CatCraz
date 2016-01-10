@@ -27,6 +27,7 @@
   "homepage": "https://github.com/vidaaudrey/CatCraz#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "bower": "^1.7.2",
     "express": "^4.13.3",
     "faker": "^3.0.1",
     "grunt": "^0.4.5",
@@ -42,7 +43,6 @@
     "node-restful": "^0.2.4"
   },
   "devDependencies": {
-    "bower": "^1.7.2",
     "grunt-nodemon": "^0.4.1"
   }
 }
